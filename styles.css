@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35px);
+    width: 560px;
+    height: 560px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+}
