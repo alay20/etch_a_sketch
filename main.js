@@ -15,15 +15,18 @@ function makeGrid () {
     }
 }
 
-function sketch(e) {
-    console.log('Event Type: '+e.type);
+function sketch() {
+    squareDiv.style.backgroundColor = 'black';
 }
 
 makeGrid();
 
 var squareDiv = document.querySelectorAll('.square');
-squareDiv.forEach(sketch);
-
+for (let i = 0; i < squareDiv.length; i++) {
+    squareDiv[i].addEventListener('mouseenter', function() {
+        this.style.backgroundColor = 'black';
+    })
+}
 
 // squareDiv.addEventListener('mouseenter', sketch);
 // squareDiv.addEventListener('mouseleave', sketch);
