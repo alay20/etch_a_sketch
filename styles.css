@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -7,9 +8,13 @@ body {
     align-items: center;
 }
 
+.btn {
+    align-self: flex-start;
+    margin-left: 200px;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 35px);
     width: 560px;
     height: 560px;
     background-color: white;
