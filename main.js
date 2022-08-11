@@ -16,22 +16,37 @@ function makeGrid (area) {
 
 makeGrid(256);
 
+//To draw on grid in black
+
 var squareDiv = document.querySelectorAll('.square');
 for (let i = 0; i < squareDiv.length; i++) {
-    squareDiv[i].addEventListener('mouseenter', function() {
-        this.style.backgroundColor = 'black';
-    })
-}
+squareDiv[i].addEventListener('mouseenter', function() {
+this.style.backgroundColor = 'black';
+})}
 
 var btnClick = document.querySelector('.btn').addEventListener('click', function(){
     var dimension = prompt('Select the number of squares on each side. Must be a whole number 0-100'); 
     area = dimension*dimension
+    //remove old grid
+    var removeDiv = document.querySelectorAll('.square');
+    for (let i = 0; i < removeDiv.length; i++) {
+        gridContainer.removeChild(removeDiv[i]);
+    }
+    //add new grid
     makeGrid(area);
-    gridContainer.style.gridTemplateColumns = 'repeat(dimension, 1fr)';
-    gridContainer.style.gridTemplateRows = 'repeat(dimension, 1fr)';
+    gridContainer.style.gridTemplateColumns = 'repeat(30, 1fr)';
+    gridContainer.style.gridTemplateRows = 'repeat(30, 1fr)';
+    var squareDiv = document.querySelectorAll('.square');
+        for (let i = 0; i < squareDiv.length; i++) {
+        squareDiv[i].addEventListener('mouseenter', function() {
+        this.style.backgroundColor = 'black';
+            })}
 })
 
 //how to input variable from prompt into repeat()??
+
+
+
 
 
 
