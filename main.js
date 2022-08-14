@@ -15,18 +15,12 @@ function makeGrid (area) {
 
 makeGrid(256);
 
-//To sketch on grid in black
 
-var squareDiv = document.querySelectorAll('.square');
-for (let i = 0; i < squareDiv.length; i++) {
-squareDiv[i].addEventListener('mouseenter', function() {
-this.style.backgroundColor = 'black';
-})}
 
 //Button to change grid dimensions
 
-var btnClick = document.querySelector('.btn').addEventListener('click', function(){
-    var dimension = parseInt(prompt('Select the number of squares on each side. Must be a whole number 0-100')); 
+var btnNewGrid = document.querySelector('.btn-new').addEventListener('click', function(){
+    var dimension = parseInt(prompt('Select the number of squares on each side. Must be a whole number 1-100')); 
     area = dimension*dimension
     //remove old grid
     var removeDiv = document.querySelectorAll('.square');
@@ -36,14 +30,32 @@ var btnClick = document.querySelector('.btn').addEventListener('click', function
     //add new grid
     makeGrid(area);
     gridContainer.style.gridTemplateColumns = 'repeat('+dimension+', 1fr)';
-    var squareDiv = document.querySelectorAll('.square');
-        for (let i = 0; i < squareDiv.length; i++) {
-        squareDiv[i].addEventListener('mouseenter', function() {
-        this.style.backgroundColor = 'black';
-            })}
 })
 
-//how to input variable from prompt into repeat()??
+
+//To sketch on grid in black
+
+var btnBlack = document.querySelector('.btn-black').addEventListener('click', function(){
+    var squareDiv = document.querySelectorAll('.square');
+    for (let i = 0; i < squareDiv.length; i++) {
+    squareDiv[i].addEventListener('mouseenter', function() {
+    this.style.backgroundColor = 'black';
+    })}})
+
+//To sketch on grid in rainbow colour
+var btnRainbow = document.querySelector('.btn-rainbow').addEventListener('click', function(){
+    var squareDiv = document.querySelectorAll('.square');
+    for (let i = 0; i < squareDiv.length; i++) {
+    squareDiv[i].addEventListener('mouseenter', function() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);    
+    this.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+    })}})
+
+
+
+
 
 
 
