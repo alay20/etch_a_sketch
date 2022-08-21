@@ -10,12 +10,13 @@ body {
 }
 
 .btn-new,
-.header,
 .btn-black,
 .btn-rainbow,
 .btn-shade,
 .btn-eraser {
     align-self: flex-start;
+    padding: 12px 26px;
+    font-size: 15px;
 }
 
 .btn-black,
@@ -23,7 +24,31 @@ body {
 .btn-shade,
 .btn-eraser {
     margin-bottom: 20px;
+    transition-duration: 0.4s;
+    width: 125px;
 }
+
+.btn-black:focus {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-rainbow:focus {
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    font-weight: bold;
+}
+
+.btn-shade:focus {
+    background-image: linear-gradient(to right, white, black);
+    font-weight: bold;
+}
+
+.btn-eraser:focus {
+    background-color: #E1ADB3;
+    font-weight: bold;
+}
+
 
 .grid-container {
     display: grid;
