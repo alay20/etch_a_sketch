@@ -12,12 +12,16 @@ body {
 .btn-new,
 .header,
 .btn-black,
-.btn-rainbow {
+.btn-rainbow,
+.btn-shade,
+.btn-eraser {
     align-self: flex-start;
 }
 
 .btn-black,
-.btn-rainbow {
+.btn-rainbow,
+.btn-shade,
+.btn-eraser {
     margin-bottom: 20px;
 }
 
