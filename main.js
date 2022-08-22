@@ -33,7 +33,19 @@ var btnNewGrid = document.querySelector('.btn-new').addEventListener('click', fu
 
 //To sketch on grid in black
 
-var btnBlack = document.querySelector('.btn-black').addEventListener('click', function(){
+var btnBlack = document.querySelector('.btn-black');
+btnBlack.addEventListener('click', function(){
+    
+    //Buttons styling with click
+    btnBlack.classList.remove('btn-black');
+    btnBlack.classList.add('black-active');
+    btnRainbow.classList.remove('rainbow-active');
+    btnRainbow.classList.add('btn-rainbow');
+    btnShade.classList.add('btn-shade');
+    btnShade.classList.remove('shade-active');
+    btnErase.classList.remove('eraser-active');
+    btnErase.classList.add('btn-eraser');
+    
     var squareDiv = document.querySelectorAll('.square');
     for (let i = 0; i < squareDiv.length; i++) {
         squareDiv[i].addEventListener('mouseenter', function() {
@@ -41,7 +53,19 @@ var btnBlack = document.querySelector('.btn-black').addEventListener('click', fu
     })}})
 
 //To sketch on grid in rainbow colour
-var btnRainbow = document.querySelector('.btn-rainbow').addEventListener('click', function(){
+var btnRainbow = document.querySelector('.btn-rainbow');
+btnRainbow.addEventListener('click', function(){
+    
+    //Buttons styling with click
+    btnRainbow.classList.remove('btn-rainbow');
+    btnRainbow.classList.add('rainbow-active');
+    btnBlack.classList.remove('black-active');
+    btnBlack.classList.add('btn-black');
+    btnShade.classList.add('btn-shade');
+    btnShade.classList.remove('shade-active');
+    btnErase.classList.remove('eraser-active');
+    btnErase.classList.add('btn-eraser');
+    
     var squareDiv = document.querySelectorAll('.square');
     for (let i = 0; i < squareDiv.length; i++) {
         squareDiv[i].addEventListener('mouseenter', function() {
@@ -53,7 +77,20 @@ var btnRainbow = document.querySelector('.btn-rainbow').addEventListener('click'
 
 //To sketch on grid in progressively darker black
 
-var btnShade = document.querySelector('.btn-shade').addEventListener('click', function (){
+var btnShade = document.querySelector('.btn-shade');
+btnShade.addEventListener('click', function (){
+    
+    //Buttons styling with click
+    btnShade.classList.remove('btn-shade');
+    btnShade.classList.add('shade-active');
+    btnBlack.classList.remove('black-active');
+    btnBlack.classList.add('btn-black');
+    btnRainbow.classList.remove('rainbow-active');
+    btnRainbow.classList.add('btn-rainbow');
+    btnErase.classList.remove('eraser-active');
+    btnErase.classList.add('btn-eraser');
+    
+    
     var squareDiv = document.querySelectorAll('.square');
     var mouseEnterCount = new Array(squareDiv.length).fill(0);  
     
@@ -90,7 +127,20 @@ var btnShade = document.querySelector('.btn-shade').addEventListener('click', fu
             );
 
 //To erase
-var btnErase = document.querySelector('.btn-eraser').addEventListener('click', function(){
+var btnErase = document.querySelector('.btn-eraser')
+btnErase.addEventListener('click', function(){
+
+    //Buttons styling with click
+    btnErase.classList.remove('btn-eraser');
+    btnErase.classList.add('eraser-active');
+    btnBlack.classList.remove('black-active');
+    btnBlack.classList.add('btn-black');
+    btnRainbow.classList.remove('rainbow-active');
+    btnRainbow.classList.add('btn-rainbow');
+    btnShade.classList.remove('shade-active')
+    btnShade.classList.add('btn-shade')
+
+
     var squareDiv = document.querySelectorAll('.square');
     for (let i = 0; i < squareDiv.length; i++) {
         squareDiv[i].addEventListener('mouseenter', function() {

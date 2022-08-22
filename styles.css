@@ -11,40 +11,48 @@ body {
 
 .btn-new,
 .btn-black,
+.black-active,
 .btn-rainbow,
+.rainbow-active,
 .btn-shade,
-.btn-eraser {
+.shade-active,
+.btn-eraser,
+.eraser-active {
     align-self: flex-start;
     padding: 12px 26px;
     font-size: 15px;
 }
 
 .btn-black,
+.black-active,
 .btn-rainbow,
+.rainbow-active,
 .btn-shade,
-.btn-eraser {
+.shade-active,
+.btn-eraser,
+.eraser-active {
     margin-bottom: 20px;
     transition-duration: 0.4s;
     width: 125px;
 }
 
-.btn-black:focus {
+.black-active {
     background-color: black;
     color: white;
     font-weight: bold;
 }
 
-.btn-rainbow:focus {
+.rainbow-active {
     background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
     font-weight: bold;
 }
 
-.btn-shade:focus {
+.shade-active {
     background-image: linear-gradient(to right, white, black);
     font-weight: bold;
 }
 
-.btn-eraser:focus {
+.eraser-active {
     background-color: #E1ADB3;
     font-weight: bold;
 }
