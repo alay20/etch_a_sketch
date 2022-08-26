@@ -12,8 +12,15 @@
 
 <div class = "menu-container">
     <h1 class = "header">etch-a-sketch</h1> 
-    <button class = "btn-new">Change Dimensions</button>
-    <h4 class = "subheader">Choose a colour to start:</h4>
+    
+    <p class = "ask-input" >Enter the desired number of squares on each side of the grid. Must be a whole number between 1-100:</p>
+    <input type = "number" id = "dimension" name = "dimension" value = "16" min = "1" max = "100" required>
+    <input type = "submit" id = "submit">
+    
+    <!-- Old button using prompt -->
+    <!-- <button class = "btn-new">Change Dimensions</button> -->
+    
+    <h3 class = "subheader">Choose a colour to start:</h3>
     <button class = "btn-black">Black</button>
     <button class = "btn-rainbow">Rainbow</button>
     <button class = "btn-shade">Black Shading</button>

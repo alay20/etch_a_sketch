@@ -1,15 +1,38 @@
 body {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
 }
 
 .menu-container {
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
 }
 
-.btn-new,
+.ask-input {
+    width: 280px;
+    font-size: large;
+}
+
+#dimension {
+    width: 3em;
+    font-size: medium;
+    margin-bottom: 8px;
+}
+
+#submit {
+    align-self: flex-start;
+    font-size: 15px;
+    padding: 4px 12px;
+    background-color: #ADD8E6;
+}
+
+/* .btn-new {
+    background-color: #43A6C6;
+} */
+
+
 .btn-black,
 .black-active,
 .btn-rainbow,
@@ -34,6 +57,13 @@ body {
     margin-bottom: 20px;
     transition-duration: 0.4s;
     width: 125px;
+}
+
+.btn-black,
+.btn-rainbow,
+.btn-shade,
+.btn-eraser {
+    background-color: #ADD8E6;
 }
 
 .black-active {
@@ -68,6 +98,3 @@ body {
     margin-top: 40px;
 }
 
-.place-holder-container {
-    width: 182px;
-}

@@ -12,23 +12,52 @@ function makeGrid (area) {
         gridContainer.appendChild(squareDiv);
     }
 }
-
+//Default 16x16 grid
 makeGrid(256);
 
-//Button to change grid dimensions
 
-var btnNewGrid = document.querySelector('.btn-new').addEventListener('click', function(){
-    var dimension = parseInt(prompt('Select the number of squares on each side. Must be a whole number 1-100')); 
-    area = dimension*dimension
+//Button to change grid dimensions with user input without prompt
+var submit = document.getElementById('submit')
+submit.addEventListener('click', function(){
+    var input = document.getElementById('dimension').value
+    area = input*input
+    
     //remove old grid
     var removeDiv = document.querySelectorAll('.square');
     for (let i = 0; i < removeDiv.length; i++) {
         gridContainer.removeChild(removeDiv[i]);
     }
+    
     //add new grid
     makeGrid(area);
-    gridContainer.style.gridTemplateColumns = 'repeat('+dimension+', 1fr)';
+    gridContainer.style.gridTemplateColumns = 'repeat('+input+', 1fr)';
+
+    //reset all buttons
+    btnBlack.classList.add('btn-black');
+    btnBlack.classList.remove('black-active');
+    btnRainbow.classList.remove('rainbow-active');
+    btnRainbow.classList.add('btn-rainbow');
+    btnShade.classList.add('btn-shade');
+    btnShade.classList.remove('shade-active');
+    btnErase.classList.remove('eraser-active');
+    btnErase.classList.add('btn-eraser');
 })
+
+
+//Button to change grid dimensions with prompt pop-up
+
+// var btnNewGrid = document.querySelector('.btn-new').addEventListener('click', function(){
+//     var dimension = parseInt(prompt('Select the number of squares on each side. Must be a whole number 1-100')); 
+//     area = dimension*dimension
+//     //remove old grid
+//     var removeDiv = document.querySelectorAll('.square');
+//     for (let i = 0; i < removeDiv.length; i++) {
+//         gridContainer.removeChild(removeDiv[i]);
+//     }
+//     //add new grid
+//     makeGrid(area);
+//     gridContainer.style.gridTemplateColumns = 'repeat('+dimension+', 1fr)';
+// })
 
 
 //To sketch on grid in black
@@ -148,13 +177,3 @@ btnErase.addEventListener('click', function(){
         })
     }
     });
-
-
-
-
-
-
-
-
-
-
