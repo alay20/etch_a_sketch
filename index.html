@@ -14,8 +14,13 @@
     <h1 class = "header">etch-a-sketch</h1> 
     
     <p class = "ask-input" >Enter the desired number of squares on each side of the grid. Must be a whole number between 1-100:</p>
+
+<div class = "input-container">
     <input type = "number" id = "dimension" name = "dimension" value = "16" min = "1" max = "100" required>
-    <input type = "submit" id = "submit">
+    <input type = "submit" id = "submit">    
+</div>
+    <span class = "input-error"></span>    
+
     
     <!-- Old button using prompt -->
     <!-- <button class = "btn-new">Change Dimensions</button> -->

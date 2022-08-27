@@ -18,10 +18,20 @@ makeGrid(256);
 
 //Button to change grid dimensions with user input without prompt
 var submit = document.getElementById('submit')
+
 submit.addEventListener('click', function(){
     var input = document.getElementById('dimension').value
     area = input*input
-    
+
+    var error = document.querySelector('.input-error')
+    if (input < 0 || input > 100) {
+        error.textContent = "Please enter a whole number between 0-100";
+        error.style.color = 'red'; 
+        error.style.fontWeight= '800';
+        
+    } else {
+        error.textContent = "";
+        
     //remove old grid
     var removeDiv = document.querySelectorAll('.square');
     for (let i = 0; i < removeDiv.length; i++) {
@@ -32,6 +42,9 @@ submit.addEventListener('click', function(){
     makeGrid(area);
     gridContainer.style.gridTemplateColumns = 'repeat('+input+', 1fr)';
 
+    }
+    
+    
     //reset all buttons
     btnBlack.classList.add('btn-black');
     btnBlack.classList.remove('black-active');

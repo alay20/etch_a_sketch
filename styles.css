@@ -15,23 +15,23 @@ body {
     font-size: large;
 }
 
+.input-container {
+    display: flex;
+    flex-direction: row;
+}
+
 #dimension {
     width: 3em;
-    font-size: medium;
+    font-size: large;
     margin-bottom: 8px;
 }
 
 #submit {
     align-self: flex-start;
     font-size: 15px;
-    padding: 4px 12px;
+    padding: 3px 12px;
     background-color: #ADD8E6;
 }
-
-/* .btn-new {
-    background-color: #43A6C6;
-} */
-
 
 .btn-black,
 .black-active,
