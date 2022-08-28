@@ -1,3 +1,4 @@
+//Function to create grid of squares
 var gridContainer = document.querySelector('.grid-container');
 gridContainer.style.gridTemplateColumns = 'repeat(16, 1fr)';
 
@@ -16,16 +17,14 @@ function makeGrid (area) {
 makeGrid(256);
 
 
-//Button to change grid dimensions with user input without prompt
-var submit = document.getElementById('submit')
-
-submit.addEventListener('click', function(){
+//To change grid dimensions with user input and no prompt
+function createNewGrid () {
     var input = document.getElementById('dimension').value
     area = input*input
 
     var error = document.querySelector('.input-error')
-    if (input < 0 || input > 100) {
-        error.textContent = "Please enter a whole number between 0-100";
+    if (input < 1 || input > 100) {
+        error.textContent = "Please enter a whole number between 1-100";
         error.style.color = 'red'; 
         error.style.fontWeight= '800';
         
@@ -44,7 +43,6 @@ submit.addEventListener('click', function(){
 
     }
     
-    
     //reset all buttons
     btnBlack.classList.add('btn-black');
     btnBlack.classList.remove('black-active');
@@ -54,30 +52,14 @@ submit.addEventListener('click', function(){
     btnShade.classList.remove('shade-active');
     btnErase.classList.remove('eraser-active');
     btnErase.classList.add('btn-eraser');
-})
+}
 
-
-//Button to change grid dimensions with prompt pop-up
-
-// var btnNewGrid = document.querySelector('.btn-new').addEventListener('click', function(){
-//     var dimension = parseInt(prompt('Select the number of squares on each side. Must be a whole number 1-100')); 
-//     area = dimension*dimension
-//     //remove old grid
-//     var removeDiv = document.querySelectorAll('.square');
-//     for (let i = 0; i < removeDiv.length; i++) {
-//         gridContainer.removeChild(removeDiv[i]);
-//     }
-//     //add new grid
-//     makeGrid(area);
-//     gridContainer.style.gridTemplateColumns = 'repeat('+dimension+', 1fr)';
-// })
+var submit = document.getElementById('submit')
+submit.addEventListener('click', createNewGrid)
 
 
 //To sketch on grid in black
-
-var btnBlack = document.querySelector('.btn-black');
-btnBlack.addEventListener('click', function(){
-    
+function colorBlack () {
     //Buttons styling with click
     btnBlack.classList.remove('btn-black');
     btnBlack.classList.add('black-active');
@@ -92,12 +74,13 @@ btnBlack.addEventListener('click', function(){
     for (let i = 0; i < squareDiv.length; i++) {
         squareDiv[i].addEventListener('mouseenter', function() {
             this.style.backgroundColor = 'black';
-    })}})
+})}}
+
+var btnBlack = document.querySelector('.btn-black');
+btnBlack.addEventListener('click', colorBlack);
 
 //To sketch on grid in rainbow colour
-var btnRainbow = document.querySelector('.btn-rainbow');
-btnRainbow.addEventListener('click', function(){
-    
+function colorRainbow () {
     //Buttons styling with click
     btnRainbow.classList.remove('btn-rainbow');
     btnRainbow.classList.add('rainbow-active');
@@ -115,13 +98,15 @@ btnRainbow.addEventListener('click', function(){
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);    
             this.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
-    })}})
+    })}}
+
+
+var btnRainbow = document.querySelector('.btn-rainbow');
+btnRainbow.addEventListener('click', colorRainbow);
+    
 
 //To sketch on grid in progressively darker black
-
-var btnShade = document.querySelector('.btn-shade');
-btnShade.addEventListener('click', function (){
-    
+function colorShade () {
     //Buttons styling with click
     btnShade.classList.remove('btn-shade');
     btnShade.classList.add('shade-active');
@@ -166,12 +151,14 @@ btnShade.addEventListener('click', function (){
             } else {
                 this.style.backgroundColor = '#000000';
             }})}}
-            );
+    
 
+var btnShade = document.querySelector('.btn-shade');
+btnShade.addEventListener('click', colorShade);
+    
+   
 //To erase
-var btnErase = document.querySelector('.btn-eraser')
-btnErase.addEventListener('click', function(){
-
+function colorErase() {
     //Buttons styling with click
     btnErase.classList.remove('btn-eraser');
     btnErase.classList.add('eraser-active');
@@ -182,11 +169,11 @@ btnErase.addEventListener('click', function(){
     btnShade.classList.remove('shade-active')
     btnShade.classList.add('btn-shade')
 
-
     var squareDiv = document.querySelectorAll('.square');
     for (let i = 0; i < squareDiv.length; i++) {
         squareDiv[i].addEventListener('mouseenter', function() {
             this.style.backgroundColor = 'white';
-        })
-    }
-    });
+    })}}
+
+var btnErase = document.querySelector('.btn-eraser')
+btnErase.addEventListener('click', colorErase);
